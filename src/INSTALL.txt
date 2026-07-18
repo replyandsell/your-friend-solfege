@@ -1,0 +1,57 @@
+ИНСТРУКЦИЯ ПО УСТАНОВКЕ УРОКОВ 15-25
+
+Все файлы находятся в /mnt/user-data/outputs/
+
+ШАГИ:
+
+1. **Скопируй файлы уроков (15-25) в папку src/views/**
+
+   Скопируй эти 11 файлов в папку src/views/:
+   - LessonModesView.vue (Урок 15)
+   - LessonTritonView.vue (Урок 16)
+   - LessonMinorProgressionView.vue (Урок 17)
+   - LessonMelodyPhrasingView.vue (Урок 18)
+   - LessonBreathPauseView.vue (Урок 19)
+   - LessonVoiceLeadingView.vue (Урок 20)
+   - LessonPentatonicView.vue (Урок 21)
+   - LessonSynthModulationView.vue (Урок 22)
+   - LessonGrooveShuffleView.vue (Урок 23)
+   - LessonLoopCreationView.vue (Урок 24)
+   - LessonPracticeFinalView.vue (Урок 25)
+
+2. **Замени src/router/index.js**
+
+   Содержимое router-index.js (в outputs) — это полный файл роутера.
+   Замени весь contenido src/router/index.js на содержимое router-index.js
+
+3. **Замени src/views/CourseView.vue**
+
+   Содержимое CourseView-updated.vue (в outputs) — это обновленное меню курса.
+   Замени весь contenido src/views/CourseView.vue на содержимое CourseView-updated.vue
+
+4. **Запусти браузер**
+
+   npm run dev
+   http://localhost:5173/
+
+5. **Готово!**
+
+   Все 25 уроков работают. Переходи в "Курс" → выбирай уроки 15-25.
+
+ПРИМЕЧАНИЯ:
+
+- Файлы совместимы с существующим проектом (с уроками 1-14)
+- Не нужно ничего переустанавливать (npm install и т.д.)
+- Все уроки используют существующий AudioEngine и компоненты
+
+ЕСЛИ ОШИБКА:
+
+Если файлы не загружаются (черный экран), проверь:
+1. Все ли файлы скопированы в src/views/
+2. Правильно ли заменены router/index.js и CourseView.vue
+3. Нет ли опечаток в именах файлов (Vue чувствителен к регистру)
+4. Перезагрузи браузер (Ctrl+Shift+Del → F5)
+
+---
+
+Курс готов к использованию!
