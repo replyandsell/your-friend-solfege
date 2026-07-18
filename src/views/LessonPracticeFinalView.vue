@@ -122,7 +122,7 @@ async function playFullArrangement() {
       </div>
       <div class="border-t border-surface2 pt-8">
         <h3 class="text-lg font-semибold mb-3">Дальше</h3>
-        <p class="text-sm text-textDim mb-4">Эти 25 уроков — фундамент. Дальше:</p>
+        <p class="text-sm text-textDim mb-4">Эти 31 урок — фундамент. Дальше:</p>
         <p class="text-sm text-textDim">1. Открой свой DAW (Ableton, FL Studio, Reaper)</p>
         <p class="text-sm text-textDim">2. Создай луп из трёх-четырёх аккордов</p>
         <p class="text-sm text-textDim">3. Напиши мелодию на пентатонике</p>

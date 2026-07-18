@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,10 +14,94 @@ html {
 
 body {
   @apply bg-bg text-text font-sans antialiased;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2d2742;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p, li, span, button, label {
+  line-height: 1.75;
+}
+
+button, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+button:hover, .hover\:opacity-90:hover {
+  transform: translateY(-1px);
+}
+
+.gradient-border-btn {
+  background-image: linear-gradient(white, white), linear-gradient(135deg, rgba(217, 163, 255, 0.35), rgba(199, 232, 255, 0.35));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid transparent;
+  color: #312d41;
+  border-radius: 1rem;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+.gradient-border-btn:hover {
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(217, 163, 255, 0.55);
+}
+
+.gradient-border-btn--ghost {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.gradient-border-btn--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.thin-divider {
+  border-top: 1px solid rgba(167, 143, 190, 0.22);
+}
+
+.textured-surface {
+  background-image: radial-gradient(circle at top left, rgba(217, 163, 255, 0.14), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(199, 232, 255, 0.12), transparent 22%);
+}
+
+.menu-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.shadow-sm {
+  box-shadow: 0 18px 55px rgba(118, 85, 204, 0.08) !important;
+}
+
+.shadow {
+  box-shadow: 0 22px 85px rgba(118, 85, 204, 0.09) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 20px 70px rgba(118, 85, 204, 0.08) !important;
+}
+
+.rounded-3xl.border, .rounded-2xl.border, .rounded-xl.border, .rounded-lg.border {
+  border-color: rgba(167, 143, 190, 0.28) !important;
 }
 
 ::selection {
-  background: rgba(121, 151, 255, 0.3);
+  background: rgba(217, 163, 255, 0.24);
 }
 
 @media (prefers-reduced-motion: reduce) {

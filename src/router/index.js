@@ -32,6 +32,12 @@ const routes = [
   { path: '/course/groove-shuffle/lesson-23', name: 'lesson-groove-23', component: () => import('../views/LessonGrooveShuffleView.vue') },
   { path: '/course/loop-creation/lesson-24', name: 'lesson-loop-24', component: () => import('../views/LessonLoopCreationView.vue') },
   { path: '/course/practice-final/lesson-25', name: 'lesson-final-25', component: () => import('../views/LessonPracticeFinalView.vue') },
+  { path: '/course/solfege-syllables/lesson-26', name: 'lesson-solfege-26', component: () => import('../views/LessonSolfegeSyllablesView.vue') },
+  { path: '/course/keys/lesson-27', name: 'lesson-keys-27', component: () => import('../views/LessonKeysView.vue') },
+  { path: '/course/chord-functions/lesson-28', name: 'lesson-chord-functions-28', component: () => import('../views/LessonChordFunctionsView.vue') },
+  { path: '/course/melody-harmony/lesson-29', name: 'lesson-melody-harmony-29', component: () => import('../views/LessonMelodyHarmonyView.vue') },
+  { path: '/course/interval-dictation/lesson-30', name: 'lesson-interval-dictation-30', component: () => import('../views/LessonIntervalDictationView.vue') },
+  { path: '/course/melodic-dictation/lesson-31', name: 'lesson-melodic-dictation-31', component: () => import('../views/LessonMelodicDictationView.vue') },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 

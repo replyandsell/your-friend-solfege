@@ -75,7 +75,23 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 11: Применение в электронной музыке',
+    title: 'Модуль 11: Сольфеджио и слух',
+    lessons: [
+      { path: '/course/solfege-syllables/lesson-26', title: 'Урок 26: Сольфеджио слоги', description: 'До, ре, ми и другие ступени в слуховом образе.' },
+      { path: '/course/keys/lesson-27', title: 'Урок 27: Ключи и тональный центр', description: 'Тоника, доминанта и субдоминанта в тональности.' },
+      { path: '/course/chord-functions/lesson-28', title: 'Урок 28: Функции аккордов', description: 'Роли I, IV, V и как они двигают музыку.' },
+      { path: '/course/melody-harmony/lesson-29', title: 'Урок 29: Мелодия над гармонией', description: 'Строим мелодию, опираясь на аккорды и ступени.' },
+    ],
+  },
+  {
+    title: 'Модуль 12: Слушаем и записываем',
+    lessons: [
+      { path: '/course/interval-dictation/lesson-30', title: 'Урок 30: Интервальная диктовка', description: 'Тренируем слух, слыша большие, малые и чистые интервалы.' },
+      { path: '/course/melodic-dictation/lesson-31', title: 'Урок 31: Мелодическая диктовка', description: 'Учимся повторять мелодию по слуху и записывать её.' },
+    ],
+  },
+  {
+    title: 'Модуль 13: Применение в электронной музыке',
     lessons: [
       { path: '/course/synth-modulation/lesson-22', title: 'Урок 22: Синтезатор и модуляция', description: 'Как меняется характер звука.' },
       { path: '/course/groove-shuffle/lesson-23', title: 'Урок 23: Groove и shuffle ритм', description: 'Как сделать ритм более живым.' },
@@ -91,10 +107,10 @@ const totalModules = computed(() => modules.length)
 
 <template>
   <div class="mx-auto max-w-5xl p-8">
-    <div class="rounded-3xl border border-surface2 bg-surface p-6 shadow-sm">
+    <div class="rounded-3xl border border-surface2 bg-surface p-6 shadow-soft textured-surface">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h2 class="text-2xl font-semibold">Путь по курсу</h2>
+          <h2 class="text-2xl card-heading">Путь по курсу</h2>
           <p class="mt-2 max-w-2xl text-sm text-textDim">
             Учебник собран как последовательность небольших шагов: от ритма к гармонии.
             Переходи от урока к уроку и слушай, как меняется музыка.
@@ -111,7 +127,7 @@ const totalModules = computed(() => modules.length)
       <section
         v-for="module in modules"
         :key="module.title"
-        class="rounded-2xl border border-surface2 bg-surface p-6"
+        class="rounded-2xl border border-surface2 bg-surface p-6 shadow-soft"
       >
         <div class="mb-4 flex items-center justify-between gap-3">
           <h3 class="text-xl font-semibold">{{ module.title }}</h3>

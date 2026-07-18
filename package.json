@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Ваш друг - СОЛЬФЕДЖИО — интерактивный учебник по сольфеджио.",
-  "homepage": "https://your-friend-solfege-8oivmr0gn-reply-sell.vercel.app",
+  "description": "Наш друг - СОЛЬФЕДЖИО — интерактивный учебник по сольфеджио.",
+  "homepage": "https://your-friend-solfege.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/replyandsell/your-friend-solfege.git"
