@@ -1,12 +1,24 @@
 {
-  "name": "slyshat-i-sozdavat",
+  "name": "your-friend-solfege",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Ваш друг - СОЛЬФЕДЖИО — интерактивный учебник по сольфеджио.",
+  "homepage": "https://your-friend-solfege-8oivmr0gn-reply-sell.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/replyandsell/your-friend-solfege.git"
+  },
+  "author": "replyandsell",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "npm run build"
   },
   "dependencies": {
     "tone": "^15.1.22",
