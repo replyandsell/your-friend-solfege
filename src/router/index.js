@@ -38,6 +38,16 @@ const routes = [
   { path: '/course/melody-harmony/lesson-29', name: 'lesson-melody-harmony-29', component: () => import('../views/LessonMelodyHarmonyView.vue') },
   { path: '/course/interval-dictation/lesson-30', name: 'lesson-interval-dictation-30', component: () => import('../views/LessonIntervalDictationView.vue') },
   { path: '/course/melodic-dictation/lesson-31', name: 'lesson-melodic-dictation-31', component: () => import('../views/LessonMelodicDictationView.vue') },
+  { path: '/course/rhythm/division/lesson-32', name: 'lesson-rhythm-32', component: () => import('../views/LessonRhythmDivisionView.vue') },
+  { path: '/course/rhythm/dots-ties/lesson-33', name: 'lesson-rhythm-33', component: () => import('../views/LessonRhythmDotsTiesView.vue') },
+  { path: '/course/rhythm/syncopation-advanced/lesson-34', name: 'lesson-rhythm-34', component: () => import('../views/LessonRhythmSyncopationAdvancedView.vue') },
+  { path: '/course/rhythm/triplets/lesson-35', name: 'lesson-rhythm-35', component: () => import('../views/LessonRhythmTripletsView.vue') },
+  { path: '/course/rhythm/swing/lesson-36', name: 'lesson-rhythm-36', component: () => import('../views/LessonRhythmSwingView.vue') },
+  { path: '/course/rhythm/compound-meters/lesson-37', name: 'lesson-rhythm-37', component: () => import('../views/LessonCompoundMetersView.vue') },
+  { path: '/course/rhythm/odd-meters/lesson-38', name: 'lesson-rhythm-38', component: () => import('../views/LessonOddMetersView.vue') },
+  { path: '/course/rhythm/polyrhythm/lesson-39', name: 'lesson-rhythm-39', component: () => import('../views/LessonPolyrhythmView.vue') },
+  { path: '/course/rhythm/groove/lesson-40', name: 'lesson-rhythm-40', component: () => import('../views/LessonGrooveMicrotimingView.vue') },
+  { path: '/course/rhythm/piano-roll/lesson-41', name: 'lesson-rhythm-41', component: () => import('../views/LessonPianoRollRhythmView.vue') },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 

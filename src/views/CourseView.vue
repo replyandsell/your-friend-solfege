@@ -99,6 +99,21 @@ const modules = [
       { path: '/course/practice-final/lesson-25', title: 'Урок 25: Практика — пишем свой трек', description: 'Финальное упражнение по созданию трека.' },
     ],
   },
+  {
+    title: 'Модуль 14: Продвинутый ритм и groove',
+    lessons: [
+      { path: '/course/rhythm/division/lesson-32', title: 'Урок 32: Деление доли — восьмые и шестнадцатые', description: 'Ровное деление и упражнения.' },
+      { path: '/course/rhythm/dots-ties/lesson-33', title: 'Урок 33: Точки и лиги', description: 'Длительности через границу доли.' },
+      { path: '/course/rhythm/syncopation-advanced/lesson-34', title: 'Урок 34: Синкопа — продвинутый', description: 'Сложные формы синкопы.' },
+      { path: '/course/rhythm/triplets/lesson-35', title: 'Урок 35: Триоли и деления', description: 'Триоли и комбинированные деления.' },
+      { path: '/course/rhythm/swing/lesson-36', title: 'Урок 36: Свинг и shuffle', description: 'Swing vs shuffle и шаблоны.' },
+      { path: '/course/rhythm/compound-meters/lesson-37', title: 'Урок 37: Составные размеры', description: '6/8, 9/8, 12/8 — практика.' },
+      { path: '/course/rhythm/odd-meters/lesson-38', title: 'Урок 38: Нечётные размеры', description: '5/4, 7/8 и упражнения.' },
+      { path: '/course/rhythm/polyrhythm/lesson-39', title: 'Урок 39: Полиритмия', description: '3:2, 4:3 и взаимодействие.' },
+      { path: '/course/rhythm/groove/lesson-40', title: 'Урок 40: Грув и микротайминг', description: 'Humanize и нюансы тайминга.' },
+      { path: '/course/rhythm/piano-roll/lesson-41', title: 'Урок 41: Ритм в piano roll', description: 'Velocity, quantize, swing в DAW.' },
+    ],
+  },
 ]
 
 const totalLessons = computed(() => modules.reduce((sum, module) => sum + module.lessons.length, 0))
