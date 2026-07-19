@@ -21,13 +21,21 @@ npm run check
 
 ## Как развернуть
 
-### Vercel
-1. Подключите репозиторий `replyandsell/your-friend-solfege` к Vercel.
-2. Убедитесь, что деплой идёт из ветки `main`.
-3. Запустите деплой.
+### Автодеплой через GitHub Actions (текущая настройка)
+При каждом пуше в `main` workflow `.github/workflows/ci.yml` сначала проверяет сборку, а затем job `deploy` собирает и публикует проект в Vercel через Vercel CLI.
+Для этого в репозитории (Settings → Secrets and variables → Actions) должны быть добавлены секреты:
+- `VERCEL_TOKEN` — персональный токен (vercel.com/account/tokens)
+- `VERCEL_ORG_ID` и `VERCEL_PROJECT_ID` — из настроек проекта на Vercel (Project Settings → General)
 
-### GitHub Actions
-В репозитории настроен CI, который проверяет сборку на каждом пуше и pull request.
+Pull request'ы деплоятся не будут — job `deploy` запускается только на push в `main`.
+
+### Ручной деплой
+```bash
+npm install --global vercel
+vercel pull --yes --environment=production
+vercel build --prod
+vercel deploy --prebuilt --prod
+```
 
 ## Ветка по умолчанию
 
