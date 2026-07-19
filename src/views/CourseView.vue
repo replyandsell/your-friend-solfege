@@ -1,6 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useProgress } from '../composables/useProgress'
+
+const { state: progressState, isCompleted } = useProgress()
 
 const modules = [
   {
@@ -75,7 +78,16 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 11: Сольфеджио и слух',
+    title: 'Модуль 11: Применение в электронной музыке',
+    lessons: [
+      { path: '/course/synth-modulation/lesson-22', title: 'Урок 22: Синтезатор и модуляция', description: 'Как меняется характер звука.' },
+      { path: '/course/groove-shuffle/lesson-23', title: 'Урок 23: Groove и shuffle ритм', description: 'Как сделать ритм более живым.' },
+      { path: '/course/loop-creation/lesson-24', title: 'Урок 24: Создание лупа из аккордов', description: 'Собираем маленькую музыкальную форму.' },
+      { path: '/course/practice-final/lesson-25', title: 'Урок 25: Практика — пишем свой трек', description: 'Финальное упражнение по созданию трека.' },
+    ],
+  },
+  {
+    title: 'Модуль 12: Сольфеджио и слух',
     lessons: [
       { path: '/course/solfege-syllables/lesson-26', title: 'Урок 26: Сольфеджио слоги', description: 'До, ре, ми и другие ступени в слуховом образе.' },
       { path: '/course/keys/lesson-27', title: 'Урок 27: Ключи и тональный центр', description: 'Тоника, доминанта и субдоминанта в тональности.' },
@@ -84,7 +96,29 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 12: Лад и тональность (дополнительно)',
+    title: 'Модуль 13: Слушаем и записываем',
+    lessons: [
+      { path: '/course/interval-dictation/lesson-30', title: 'Урок 30: Интервальная диктовка', description: 'Тренируем слух, слыша большие, малые и чистые интервалы.' },
+      { path: '/course/melodic-dictation/lesson-31', title: 'Урок 31: Мелодическая диктовка', description: 'Учимся повторять мелодию по слуху и записывать её.' },
+    ],
+  },
+  {
+    title: 'Модуль 14: Продвинутый ритм и groove',
+    lessons: [
+      { path: '/course/rhythm/division/lesson-32', title: 'Урок 32: Деление доли — восьмые и шестнадцатые', description: 'Ровное деление и упражнения.' },
+      { path: '/course/rhythm/dots-ties/lesson-33', title: 'Урок 33: Точки и лиги', description: 'Длительности через границу доли.' },
+      { path: '/course/rhythm/syncopation-advanced/lesson-34', title: 'Урок 34: Синкопа — продвинутый', description: 'Сложные формы синкопы.' },
+      { path: '/course/rhythm/triplets/lesson-35', title: 'Урок 35: Триоли и деления', description: 'Триоли и комбинированные деления.' },
+      { path: '/course/rhythm/swing/lesson-36', title: 'Урок 36: Свинг и shuffle', description: 'Swing vs shuffle и шаблоны.' },
+      { path: '/course/rhythm/compound-meters/lesson-37', title: 'Урок 37: Составные размеры', description: '6/8, 9/8, 12/8 — практика.' },
+      { path: '/course/rhythm/odd-meters/lesson-38', title: 'Урок 38: Нечётные размеры', description: '5/4, 7/8 и упражнения.' },
+      { path: '/course/rhythm/polyrhythm/lesson-39', title: 'Урок 39: Полиритмия', description: '3:2, 4:3 и взаимодействие.' },
+      { path: '/course/rhythm/groove/lesson-40', title: 'Урок 40: Грув и микротайминг', description: 'Humanize и нюансы тайминга.' },
+      { path: '/course/rhythm/piano-roll/lesson-41', title: 'Урок 41: Ритм в piano roll', description: 'Velocity, quantize, swing в DAW.' },
+    ],
+  },
+  {
+    title: 'Модуль 15: Лад и тональность (дополнительно)',
     lessons: [
       { path: '/course/minor-variants/lesson-42', title: 'Урок 42: Натуральный, гармонический и мелодический минор', description: 'Разница между вариантами минора.' },
       { path: '/course/scale-steps/lesson-43', title: 'Урок 43: Ступени лада и их тяготения', description: 'Функции ступеней.' },
@@ -99,7 +133,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 13: Аккорды и гармония (дополнительно)',
+    title: 'Модуль 16: Аккорды и гармония (дополнительно)',
     lessons: [
       { path: '/course/triads/lesson-52', title: 'Урок 52: Трезвучия всех видов', description: '' },
       { path: '/course/scale-chords/lesson-53', title: 'Урок 53: Аккорды на каждой ступени мажора', description: '' },
@@ -124,7 +158,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 14: Мелодия как система',
+    title: 'Модуль 17: Мелодия как система',
     lessons: [
       { path: '/course/motif/lesson-72', title: 'Урок 72: Мотив', description: '' },
       { path: '/course/repetition/lesson-73', title: 'Урок 73: Повтор и изменение', description: '' },
@@ -143,7 +177,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 15: Басовая партия',
+    title: 'Модуль 18: Басовая партия',
     lessons: [
       { path: '/course/bass/root/lesson-86', title: 'Урок 86: Корневая басовая линия', description: '' },
       { path: '/course/bass/chordtones/lesson-87', title: 'Урок 87: Бас по звукам аккорда', description: '' },
@@ -158,7 +192,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 16: Музыкальная форма и аранжировка',
+    title: 'Модуль 19: Музыкальная форма и аранжировка',
     lessons: [
       { path: '/course/form/lesson-96', title: 'Урок 96: Мотив, фраза, период и секция', description: '' },
       { path: '/course/form/ab-lesson/lesson-97', title: 'Урок 97: Формы AB, ABA и AABA', description: '' },
@@ -175,7 +209,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 17: Развитие слуха (ear training)',
+    title: 'Модуль 20: Развитие слуха (ear training)',
     lessons: [
       { path: '/course/ear/direction/lesson-108', title: 'Урок 108: Определение направления мелодии', description: '' },
       { path: '/course/ear/intervals/lesson-109', title: 'Урок 109: Определение интервалов', description: '' },
@@ -196,7 +230,7 @@ const modules = [
     ],
   },
   {
-    title: 'Модуль 18: Применение в DAW',
+    title: 'Модуль 21: Применение в DAW',
     lessons: [
       { path: '/course/daw/pitch-lesson/lesson-124', title: 'Урок 124: Ноты и октавы в piano roll', description: '' },
       { path: '/course/daw/tonality/lesson-125', title: 'Урок 125: Тональность проекта', description: '' },
@@ -214,46 +248,23 @@ const modules = [
       { path: '/course/daw/final-project/lesson-137', title: 'Урок 137: Итоговый проект', description: '' },
     ],
   },
-  {
-    title: 'Модуль 12: Слушаем и записываем',
-    lessons: [
-      { path: '/course/interval-dictation/lesson-30', title: 'Урок 30: Интервальная диктовка', description: 'Тренируем слух, слыша большие, малые и чистые интервалы.' },
-      { path: '/course/melodic-dictation/lesson-31', title: 'Урок 31: Мелодическая диктовка', description: 'Учимся повторять мелодию по слуху и записывать её.' },
-    ],
-  },
-  {
-    title: 'Модуль 13: Применение в электронной музыке',
-    lessons: [
-      { path: '/course/synth-modulation/lesson-22', title: 'Урок 22: Синтезатор и модуляция', description: 'Как меняется характер звука.' },
-      { path: '/course/groove-shuffle/lesson-23', title: 'Урок 23: Groove и shuffle ритм', description: 'Как сделать ритм более живым.' },
-      { path: '/course/loop-creation/lesson-24', title: 'Урок 24: Создание лупа из аккордов', description: 'Собираем маленькую музыкальную форму.' },
-      { path: '/course/practice-final/lesson-25', title: 'Урок 25: Практика — пишем свой трек', description: 'Финальное упражнение по созданию трека.' },
-    ],
-  },
-  {
-    title: 'Модуль 14: Продвинутый ритм и groove',
-    lessons: [
-      { path: '/course/rhythm/division/lesson-32', title: 'Урок 32: Деление доли — восьмые и шестнадцатые', description: 'Ровное деление и упражнения.' },
-      { path: '/course/rhythm/dots-ties/lesson-33', title: 'Урок 33: Точки и лиги', description: 'Длительности через границу доли.' },
-      { path: '/course/rhythm/syncopation-advanced/lesson-34', title: 'Урок 34: Синкопа — продвинутый', description: 'Сложные формы синкопы.' },
-      { path: '/course/rhythm/triplets/lesson-35', title: 'Урок 35: Триоли и деления', description: 'Триоли и комбинированные деления.' },
-      { path: '/course/rhythm/swing/lesson-36', title: 'Урок 36: Свинг и shuffle', description: 'Swing vs shuffle и шаблоны.' },
-      { path: '/course/rhythm/compound-meters/lesson-37', title: 'Урок 37: Составные размеры', description: '6/8, 9/8, 12/8 — практика.' },
-      { path: '/course/rhythm/odd-meters/lesson-38', title: 'Урок 38: Нечётные размеры', description: '5/4, 7/8 и упражнения.' },
-      { path: '/course/rhythm/polyrhythm/lesson-39', title: 'Урок 39: Полиритмия', description: '3:2, 4:3 и взаимодействие.' },
-      { path: '/course/rhythm/groove/lesson-40', title: 'Урок 40: Грув и микротайминг', description: 'Humanize и нюансы тайминга.' },
-      { path: '/course/rhythm/piano-roll/lesson-41', title: 'Урок 41: Ритм в piano roll', description: 'Velocity, quantize, swing в DAW.' },
-    ],
-  },
 ]
 
 const totalLessons = computed(() => modules.reduce((sum, module) => sum + module.lessons.length, 0))
 const totalModules = computed(() => modules.length)
+const completedLessons = computed(() => progressState.completed.size)
+const progressPercent = computed(() =>
+  totalLessons.value ? Math.round((completedLessons.value / totalLessons.value) * 100) : 0
+)
+
+function moduleCompletedCount(module) {
+  return module.lessons.filter((lesson) => isCompleted(lesson.path)).length
+}
 </script>
 
 <template>
-  <div class="mx-auto max-w-5xl p-8">
-    <div class="rounded-3xl border border-surface2 bg-surface p-6 shadow-soft textured-surface">
+  <div class="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+    <div class="rounded-3xl border border-surface2 bg-surface p-5 shadow-soft textured-surface sm:p-6">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h2 class="text-2xl card-heading">Путь по курсу</h2>
@@ -267,18 +278,28 @@ const totalModules = computed(() => modules.length)
           <div class="mt-1">{{ totalModules }} модулей</div>
         </div>
       </div>
+
+      <div class="mt-5">
+        <div class="flex items-center justify-between text-xs text-textDim">
+          <span>Пройдено: {{ completedLessons }} из {{ totalLessons }}</span>
+          <span>{{ progressPercent }}%</span>
+        </div>
+        <div class="mt-2 h-2 w-full overflow-hidden rounded-full bg-surface2">
+          <div class="h-full rounded-full bg-accent transition-all" :style="{ width: progressPercent + '%' }"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="mt-8 space-y-6">
+    <div class="mt-8 space-y-4 sm:space-y-6">
       <section
         v-for="module in modules"
         :key="module.title"
-        class="rounded-2xl border border-surface2 bg-surface p-6 shadow-soft"
+        class="rounded-2xl border border-surface2 bg-surface p-4 shadow-soft sm:p-6"
       >
         <div class="mb-4 flex items-center justify-between gap-3">
-          <h3 class="text-xl font-semibold">{{ module.title }}</h3>
+          <h3 class="text-lg font-semibold sm:text-xl">{{ module.title }}</h3>
           <span class="rounded-full border border-surface2 bg-surface2/70 px-3 py-1 text-xs uppercase tracking-[0.2em] text-textDim">
-            {{ module.lessons.length }} уроков
+            {{ moduleCompletedCount(module) }} / {{ module.lessons.length }}
           </span>
         </div>
         <div class="space-y-2">
@@ -286,9 +307,14 @@ const totalModules = computed(() => modules.length)
             v-for="lesson in module.lessons"
             :key="lesson.path"
             :to="lesson.path"
-            class="flex items-start gap-3 rounded-xl border border-surface2 bg-surface2/70 px-4 py-3 transition hover:bg-surface"
+            class="flex items-start gap-3 rounded-xl border border-surface2 bg-surface2/70 px-3 py-3 transition hover:bg-surface sm:px-4"
           >
-            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-semibold text-accent">→</span>
+            <span
+              class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold"
+              :class="isCompleted(lesson.path) ? 'bg-accent text-bg' : 'bg-accent/10 text-accent'"
+            >
+              {{ isCompleted(lesson.path) ? '✓' : '→' }}
+            </span>
             <div>
               <div class="font-medium">{{ lesson.title }}</div>
               <div class="mt-1 text-sm text-textDim">{{ lesson.description }}</div>

@@ -5,17 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#fcfbff',
-        surface: '#ffffff',
-        surface2: '#f7effc',
-        accent: '#d9a3ff',
-        accent2: '#c7e8ff',
-        text: '#312d41',
-        textDim: '#857c9d',
+        bg: '#fbf6ef',
+        surface: '#fffdf9',
+        surface2: '#f6efe7',
+        accent: '#b86a2e',
+        accent2: '#f0d9c2',
+        text: '#2b1b10',
+        textDim: '#7a6a5a',
       },
       boxShadow: {
-        soft: '0 24px 70px rgba(118, 85, 204, 0.10)',
-        card: '0 16px 45px rgba(118, 85, 204, 0.08)',
+        soft: '0 24px 70px rgba(43, 27, 16, 0.08)',
+        card: '0 16px 40px rgba(43, 27, 16, 0.06)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

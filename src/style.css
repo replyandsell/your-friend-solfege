@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #2d2742;
+  color: #2b1b10;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -37,13 +37,13 @@ button:hover, .hover\:opacity-90:hover {
 }
 
 .gradient-border-btn {
-  background-image: linear-gradient(white, white), linear-gradient(135deg, rgba(217, 163, 255, 0.35), rgba(199, 232, 255, 0.35));
+  background-image: linear-gradient(#fffdf9, #fffdf9), linear-gradient(135deg, rgba(184, 106, 46, 0.28), rgba(240, 217, 194, 0.45));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 1px solid transparent;
-  color: #312d41;
+  color: #2b1b10;
   border-radius: 1rem;
-  padding: 0.85rem 1.5rem;
+  padding: 0.8rem 1.2rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -53,25 +53,35 @@ button:hover, .hover\:opacity-90:hover {
 
 .gradient-border-btn:hover {
   transform: translateY(-1px);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(217, 163, 255, 0.55);
+  background-color: rgba(255, 253, 249, 0.9);
+  border-color: rgba(184, 106, 46, 0.4);
 }
 
 .gradient-border-btn--ghost {
-  background-color: rgba(255, 255, 255, 0.28);
+  background-color: rgba(255, 253, 249, 0.28);
 }
 
 .gradient-border-btn--ghost:hover {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 253, 249, 0.95);
 }
 
 .thin-divider {
-  border-top: 1px solid rgba(167, 143, 190, 0.22);
+  border-top: 1px solid rgba(184, 106, 46, 0.18);
 }
 
 .textured-surface {
-  background-image: radial-gradient(circle at top left, rgba(217, 163, 255, 0.14), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(199, 232, 255, 0.12), transparent 22%);
+  background-image: radial-gradient(circle at top left, rgba(184, 106, 46, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(240, 217, 194, 0.16), transparent 22%);
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  .gradient-border-btn {
+    width: 100%;
+  }
 }
 
 .menu-heading {

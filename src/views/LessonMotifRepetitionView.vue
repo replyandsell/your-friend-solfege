@@ -1,0 +1,73 @@
+<script setup>
+import { ref } from 'vue'
+import * as Tone from 'tone'
+import AudioUnlock from '../components/AudioUnlock.vue'
+
+const unlocked = ref(false)
+let synth = null
+let isInitialized = ref(false)
+
+async function initSynth() {
+  if (isInitialized.value) return
+  await Tone.start()
+  synth = new Tone.PolySynth(Tone.Synth, {
+    oscillator: { type: 'sine' },
+    envelope: { attack: 0.01, decay: 0.2, sustain: 0, release: 0.5 },
+  }).toDestination()
+  isInitialized.value = true
+}
+
+function playSeq(notes, durations) {
+  let now = Tone.now()
+  notes.forEach((note, i) => {
+    synth.triggerAttackRelease(note, durations[i] * 0.85, now)
+    now += durations[i]
+  })
+}
+
+async function playExact() {
+  await initSynth()
+  playSeq(['C4', 'D4', 'E4', 'C4', 'C4', 'D4', 'E4', 'C4'], [0.2, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.4])
+}
+
+async function playTransposed() {
+  await initSynth()
+  playSeq(['C4', 'D4', 'E4', 'C4', 'E4', 'F4', 'G4', 'E4'], [0.2, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.4])
+}
+
+async function playRhythmVaried() {
+  await initSynth()
+  playSeq(['C4', 'D4', 'E4', 'C4', 'C4', 'D4', 'E4', 'C4'], [0.2, 0.2, 0.2, 0.4, 0.35, 0.15, 0.35, 0.15])
+}
+</script>
+
+<template>
+  <div class="p-8">
+    <AudioUnlock v-if="!unlocked" @unlocked="unlocked = true; initSynth()" />
+    <div v-else>
+      <h2 class="text-2xl font-semibold mb-2">Урок 73: Повтор и изменение мотива</h2>
+      <p class="text-textDim mb-6">Мотив редко звучит только один раз. Его либо повторяют точно, либо слегка меняют — по высоте или по ритму, — сохраняя узнаваемость.</p>
+      <div class="border border-surface2 rounded-lg p-6 bg-surface mb-6">
+        <h3 class="text-lg font-semibold mb-4">Три способа развития мотива</h3>
+        <div class="space-y-3">
+          <button @click="playExact" class="block w-full px-4 py-2 rounded-lg bg-accent text-bg font-medium hover:opacity-90 transition">
+            Точный повтор — тот же мотив дважды
+          </button>
+          <button @click="playTransposed" class="block w-full px-4 py-2 rounded-lg bg-accent text-bg font-medium hover:opacity-90 transition">
+            Повтор на новой высоте — та же форма, другие ноты
+          </button>
+          <button @click="playRhythmVaried" class="block w-full px-4 py-2 rounded-lg bg-accent text-bg font-medium hover:opacity-90 transition">
+            Ритмическое изменение — те же ноты, другой рисунок длительностей
+          </button>
+        </div>
+      </div>
+      <div class="border-t border-surface2 pt-8">
+        <h3 class="text-lg font-semibold mb-3">Главная идея</h3>
+        <p class="text-sm text-textDim">
+          Точный повтор закрепляет мотив в памяти слушателя. Изменение по высоте или ритму держит интерес живым, не давая треку звучать однообразно.
+          В DAW проще всего начать с копии мотива в piano roll и подвинуть либо ноты по вертикали (высота), либо сдвинуть их по сетке (ритм) — уже это даёт ощутимую вариацию.
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
